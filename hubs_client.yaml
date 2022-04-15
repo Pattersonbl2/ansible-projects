@@ -1,0 +1,10 @@
+- hosts: aws
+
+  tasks:
+  - name: Print bio services
+    command:
+     sudo bio sup status
+    register: command_output
+  - debug:
+           var: command_output.stdout_lines
+    
